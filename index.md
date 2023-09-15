@@ -4,5 +4,5 @@ title: Student Blog
 ---
 
 
-## Here Resides Home Page
+## Movie Database
 
