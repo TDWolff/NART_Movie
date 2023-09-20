@@ -3,55 +3,56 @@ permalink: /signin
 title: Sign In
 ---
 
-## Sign In Below to Access Your Account
 
-Please enter your username and password:
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Authentication</title>
+</head>
+<body>
+    <h2>User Authentication</h2>
 
-<form id="signInForm">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required><br><br>
+    <!-- Login/Register Form -->
+    <div id="login-register-form">
+        <h3>Login or Register</h3>
+        <form id="auth-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required><br><br>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required><br><br>
 
-    <input type="submit" value="Sign In">
-</form>
+            <button type="button" onclick="authenticate()">Submit</button>
+        </form>
+    </div>
 
-<script>
-    const apiUrl = '/NART_Movie/api/users.json'; // Relative path on your GitHub Pages website
+    <!-- Display Messages -->
+    <div id="message"></div>
 
-    document.getElementById('signInForm').addEventListener('submit', function (event) {
-        event.preventDefault();
+    <script>
+        // Function to authenticate the user
+        function authenticate() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
 
-        // Get the entered username and password
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
+            // Check if the user exists in localStorage
+            const storedUser = localStorage.getItem(username);
 
-        // Create an object with the user data
-        const userData = {
-            username: username,
-            password: password
-        };
-
-        // Send the user data to your GitHub Pages website
-        fetch(apiUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(userData)
-        })
-        .then((response) => {
-            if (response.ok) {
-                // Handle success, such as redirecting the user
-                alert('Sign-in successful!');
+            if (storedUser) {
+                const userData = JSON.parse(storedUser);
+                if (userData.password === password) {
+                    document.getElementById("message").innerText = 'Sign-in successful';
+                } else {
+                    document.getElementById("message").innerText = 'Sign-in failed';
+                }
             } else {
-                // Handle failure, such as displaying an error message
-                alert('Sign-in failed. Please try again.');
+                // Create a new user in localStorage
+                const newUser = { username, password };
+                localStorage.setItem(username, JSON.stringify(newUser));
+                document.getElementById("message").innerText = 'Registration successful';
             }
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-    });
-</script>
+        }
+    </script>
+</body>
+</html>
