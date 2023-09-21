@@ -7,7 +7,7 @@ title: Sign In
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign-In</title>
+    <title>Sign-In/Register</title>
 </head>
 <body>
     <h1>Sign-In/Register</h1>
@@ -19,13 +19,14 @@ title: Sign In
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br><br>
         
-        <input type="button" value="Sign In" id="submitBtn">
+        <!-- Use a single button for both sign-in and registration -->
+        <input type="button" value="Sign In / Register" id="signInRegisterBtn">
     </form>
 
     <div id="errorMessage" style="color: red;"></div>
 
     <script>
-        document.getElementById("submitBtn").addEventListener("click", function () {
+        document.getElementById("signInRegisterBtn").addEventListener("click", function () {
             // Get the username and password input values
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
@@ -39,8 +40,8 @@ title: Sign In
             // Create a JSON object with the data
             const data = { username, password };
 
-            // Send a POST request to the server
-            fetch("http://127.0.0.1:6700/append", {
+            // Send a POST request to the server (replace with your server URL)
+            fetch("http://127.0.0.1:6700/auth_register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -49,11 +50,11 @@ title: Sign In
             })
             .then(response => {
                 if (response.ok) {
-                    // Data appended successfully
-                    document.getElementById("errorMessage").textContent = "Data appended successfully.";
+                    // Sign-in or registration successful
+                    document.getElementById("errorMessage").textContent = "Authentication/Registration successful.";
                 } else {
-                    // Error occurred
-                    document.getElementById("errorMessage").textContent = "Error appending data.";
+                    // Sign-in or registration error
+                    document.getElementById("errorMessage").textContent = "Authentication/Registration failed. Invalid credentials or username already exists.";
                 }
             })
             .catch(error => {
