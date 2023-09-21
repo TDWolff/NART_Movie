@@ -3,56 +3,64 @@ permalink: /signin
 title: Sign In
 ---
 
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Authentication</title>
+    <title>Sign-In</title>
 </head>
 <body>
-    <h2>User Authentication</h2>
+    <h1>Sign-In/Register</h1>
+    
+    <form id="signInForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <input type="button" value="Sign In" id="submitBtn">
+    </form>
 
-    <!-- Login/Register Form -->
-    <div id="login-register-form">
-        <h3>Login or Register</h3>
-        <form id="auth-form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" required><br><br>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" required><br><br>
-
-            <button type="button" onclick="authenticate()">Submit</button>
-        </form>
-    </div>
-
-    <!-- Display Messages -->
-    <div id="message"></div>
+    <div id="errorMessage" style="color: red;"></div>
 
     <script>
-        // Function to authenticate the user
-        function authenticate() {
+        document.getElementById("submitBtn").addEventListener("click", function () {
+            // Get the username and password input values
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
 
-            // Check if the user exists in localStorage
-            const storedUser = localStorage.getItem(username);
-
-            if (storedUser) {
-                const userData = JSON.parse(storedUser);
-                if (userData.password === password) {
-                    document.getElementById("message").innerText = 'Sign-in successful';
-                } else {
-                    document.getElementById("message").innerText = 'Sign-in failed';
-                }
-            } else {
-                // Create a new user in localStorage
-                const newUser = { username, password };
-                localStorage.setItem(username, JSON.stringify(newUser));
-                document.getElementById("message").innerText = 'Registration successful';
+            // Check if both fields are filled
+            if (!username || !password) {
+                document.getElementById("errorMessage").textContent = "Both username and password are required.";
+                return;
             }
-        }
+
+            // Create a JSON object with the data
+            const data = { username, password };
+
+            // Send a POST request to the server
+            fetch("http://127.0.0.1:6700/append", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Data appended successfully
+                    document.getElementById("errorMessage").textContent = "Data appended successfully.";
+                } else {
+                    // Error occurred
+                    document.getElementById("errorMessage").textContent = "Error appending data.";
+                }
+            })
+            .catch(error => {
+                console.error(error);
+                document.getElementById("errorMessage").textContent = "An error occurred.";
+            });
+        });
     </script>
 </body>
 </html>
