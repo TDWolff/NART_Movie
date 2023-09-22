@@ -10,18 +10,17 @@ courses: { compsci: {week: 4} }
 
 <h1>Backlog:</h1>
 
-<p>Monday: We started to code a sign in function for our movie database and we were able to get the basic idea down. </p>
+<p>We started to code a sign in function for our movie database and we were able to get the basic idea down. </p>
 
 <h1>In progress:</h1>
 
-<p>Monday: Incorporating the movies into the database after the sign in function was created. </p>
+<p>Incorporating the movies into the database after the sign in function was created. </p>
 
 <h1>Code Complete:</h1>
-<p>Also Monday: We finally had a sign in successful so our function is finally working!</p>
+<p> We finally had a sign in successful so our function is finally working!</p>
 
 <h1>Deployed:</h1>
-<p>We have deployed our github pages at </p>
+<p>We have deployed our github pages at https://tdwolff.github.io/NART_Movie/</p>
 
 <h1>Verified:</h1>
 
-<h1>Agile Manifesto (And how we incorporated it):</h1>
