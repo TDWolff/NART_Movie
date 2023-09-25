@@ -6,7 +6,6 @@ title: Student Blog
 
 ## Movie Database
 
-<!DOCTYPE html>
 <html>
 <head>
     <title>Top 50 Movies</title>
