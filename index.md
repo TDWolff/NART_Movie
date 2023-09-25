@@ -321,7 +321,7 @@ title: Student Blog
 
 <!-- Movie 39 -->
 <li>
-    <img src="images/movie_posters/the_departed.jpeg" width="200" height="300">
+    <img src="images/movie_posters/departed.jpg" width="200" height="300">
     <h2>The Departed (2006)</h2>
     <p>Description: An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.</p>
     <p>Genre: Crime, Drama, Thriller</p>
