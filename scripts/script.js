@@ -146,7 +146,8 @@ function recommendMovies(selectedMovies) {
         }
     }
 
-    // Recommend movies of the most frequent genre
+    // Recommend movies of the most frequent genre6
+    ,
     const recommendedMovies = movieCatalog.filter(movie => movie.genre === maxGenre && !selectedMovies.includes(movie.id));
 
     return recommendedMovies;
