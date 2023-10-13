@@ -13,14 +13,3 @@ plugins:
 - jekyll-remote-theme
 future: true
 
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        body {
-            background-image: url('images/sin city.png');
-            background-size: cover;
-        }
-    </style>
-</head>
-<body>
