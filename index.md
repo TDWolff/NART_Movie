@@ -7,7 +7,15 @@ title: Student Blog
 ## Movie Database
 
 <html>
-<head>
+
+
+<style>
+    body {
+        background-image: url('images/sin city.png');
+        background-size: cover;
+    }
+</style>
+
     <title>Top 50 Movies</title>
 </head>
 <body>
