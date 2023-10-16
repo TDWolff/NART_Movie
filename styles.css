@@ -2,3 +2,37 @@
 .navbar {
     background-color: #1F1333; 
 }
+
+
+  
+  .list-container {
+    overflow-y: scroll; /* Enable vertical scrolling */
+    max-height: 70%; /* Set the maximum height for the list container */
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1; /* Ensure the list is in front of the blur pseudo-element */
+  }
+  
+  .blurred-list {
+    list-style: none;
+    padding: 0; /* Reset padding for the list */
+  }
+  
+  .blurred-list::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/sin city.png'); /* Same background image as the container */
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px); /* Adjust the blur radius as needed */
+    z-index: -1; /* Place the pseudo-element behind the list */
+  }
+  
+  .blurred-list li {
+    margin: 10px 0;
+  }
