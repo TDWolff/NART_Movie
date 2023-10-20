@@ -32,7 +32,7 @@
 
 .list-container {
   overflow-y: scroll; /* Enable vertical scrolling */
-  max-height: 70%; /* Set the maximum height for the list container */
+  max-height: 90%; /* Set the maximum height for the list container */
   padding: 20px;
   border-radius: 10px;
   position: relative;
