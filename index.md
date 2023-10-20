@@ -12,6 +12,7 @@ title: Student Blog
         body {
             background-image: url('images/sin city.png');
             background-size: cover;
+            overscroll-behavior-y: none;
         }
     </style>
   <link rel="stylesheet" type="text/css" href="styles.css">
