@@ -4,35 +4,49 @@
 }
 
 
-  
-  .list-container {
-    overflow-y: scroll; /* Enable vertical scrolling */
-    max-height: 70%; /* Set the maximum height for the list container */
-    padding: 20px;
-    border-radius: 10px;
-    position: relative;
-    z-index: 1; /* Ensure the list is in front of the blur pseudo-element */
-  }
-  
-  .blurred-list {
-    list-style: none;
-    padding: 0; /* Reset padding for the list */
-  }
-  
-  .blurred-list::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('images/sin city.png'); /* Same background image as the container */
-    background-size: cover;
-    background-position: center;
-    filter: blur(10px); /* Adjust the blur radius as needed */
-    z-index: -1; /* Place the pseudo-element behind the list */
-  }
-  
-  .blurred-list li {
-    margin: 10px 0;
-  }
+.container {
+  background-image: url('sin_city.png'); /* Replace with your background image */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.blurred-background {
+  background-image: url('sin_city.png'); /* Replace with your background image */
+  position: fixed; /* Make the background fixed */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px); /* Adjust the blur radius as needed */
+  z-index: -1; /* Place the background blur behind the list */
+  opacity: 0.7; /* Set the opacity to control transparency */
+}
+
+.list-container {
+  overflow-y: scroll; /* Enable vertical scrolling */
+  max-height: 90%; /* Set the maximum height for the list container */
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1; /* Ensure the list is in front of the blurred background */
+  background: rgba(0, 0, 0, 0.7); /* Background color for list to improve readability and transparency */
+}
+
+.blurred-list {
+  list-style: none;
+  padding: 0; /* Reset padding for the list */
+}
+
+.blurred-list li {
+  margin: 10px 0;
+}
