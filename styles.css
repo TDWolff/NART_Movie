@@ -5,10 +5,10 @@
 
 
 .container {
-  background-image: url('sin_city.png'); /* Replace with your background image */
+  background-image: url('sin city.png'); /* Replace with your background image */
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +19,7 @@
 }
 
 .blurred-background {
-  background-image: url('sin_city.png'); /* Replace with your background image */
+  background-image: url('sin city.png'); /* Replace with your background image */
   position: fixed; /* Make the background fixed */
   top: 0;
   left: 0;
