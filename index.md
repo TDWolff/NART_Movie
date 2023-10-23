@@ -428,4 +428,3 @@ title: Student Blog
   </div>
 </body>
 </html>
-
