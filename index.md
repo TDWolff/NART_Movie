@@ -8,17 +8,19 @@ title: Student Blog
 
 <html>
 <head>
-  <style>
-    body {
-        background-image: url('images/sin city.png');
-        background-size: cover;
-    }
-</style>
+    <style>
+        body {
+            background-image: url('images/sin city.png');
+            background-size: cover;
+            overscroll-behavior-y: none;
+        }
+    </style>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <title>Top 50 Movies</title>
 </head>
 <body>
-<h1>Top 50 Movies</h1>
+  <div class="container">
+    <div class="blurred-background"></div>
     <div class="list-container">
       <ul class="blurred-list">
         <!-- Movie 1 -->
@@ -423,7 +425,7 @@ title: Student Blog
         </li>
       </ul>
     </div>
-
+  </div>
 </body>
 </html>
 
