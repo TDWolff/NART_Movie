@@ -10,7 +10,7 @@ Looking for a movie? Search for it here!
         body {
             background-image: url('images/sin city.png');
             background-size: cover;
-            overscroll-behavior-y: none;
+            overscroll-behavior: none;
         }
     </style>
 </head>
