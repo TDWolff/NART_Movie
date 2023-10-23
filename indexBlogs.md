@@ -3,11 +3,10 @@ permalink: /moviedb
 title: Movies
 ---
 
+# Movie Database Search
+Looking for a movie? Search for it here!
 
 <html>
-<head>
-<title>Movie Database</title>
-</head>
 <body>
                     <!-- Input box for movie search -->
                     <div>
