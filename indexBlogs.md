@@ -14,7 +14,6 @@ Looking for a movie? Search for it here!
                         <button onclick="searchMovies()">Search</button>
                     </div>
                 
-                    <!-- Display movie search results here -->
                     <div id="movieResults">
                         <!-- Movie search results will be displayed here -->
                     </div>
