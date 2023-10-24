@@ -5,9 +5,19 @@ title: Movies
 
 # Movie Database Search
 Looking for a movie? Search for it here!
-
+<head>
+    <style>
+        body {
+            background-image: url('images/sin city.png');
+            background-size: cover;
+            overscroll-behavior: none;
+        }
+    </style>
+</head>
 <html>
 <body>
+                <div class="blurred-background"></div>
+                <div class="list-container">
                     <!-- Input box for movie search -->
                     <div>
                         <input type="text" id="movieInput" placeholder="Enter a movie title">
@@ -56,6 +66,7 @@ Looking for a movie? Search for it here!
                                     movieResults.innerHTML = 'An error occurred while fetching data.';
                                 });
                                 }
+                </div>
 </script>
 </body>
 </html>
