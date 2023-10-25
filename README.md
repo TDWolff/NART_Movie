@@ -1,24 +1,22 @@
-## Blog site using GitHub Pages and Jekyll
-> This site is intended for Students.   This is to record plans, complete hacks, and do work for your learnings.
-- This can be customized to support computer science as you work through pathway (JavaScript, Python/Flask, Java/Spring)
-- All tangible artifact work is in a _posts or in a _notebooks.  
-- Front matter (aka meta data) in ipynb and md files is used to organize information according to week and column in running web site.
+## About us
+> Contributors
+- Nandan (Scrum Master)
+- Arnav(Front end and DevOPS)
+- Remy (Front end and DevOPS)
+- Torin(Back end with AWS)
 
-## GitHub Pages
-All `GitHub Pages` websites are managed on GitHub infrastructure. GitHub uses `Jekyll` to tranform your content into static websites and blogs. Each time we change files in GitHub it initiates a GitHub Action that rebuilds and publishes the site with Jekyll.  
-- GitHub Pages is powered by: [Jekyll](https://jekyllrb.com/).
-- Publised teacher website: [nighthawkcoders.github.io/teacher](https://nighthawkcoders.github.io/teacher/)
+## What our project is about
+Our project is a movie database, similar to IMDB, but in a more simpler form. We have incorporated by using javascript and html with css for the background while using python and AWS for our backend.
+- Our github pages is published at https://tdwolff.github.io/NART_Movie/
 
-## Preparing a Preview Site 
-In all development, it is recommended to test your code before deployment.  The GitHub Pages development process is optimized by testing your development on your local machine, prior to files on GitHub
+## How we can up with this idea
+For our team teach we have come up with the idea of a movie database. We have then for our final project decided to incorporate to a wide variety of movies compared to our low 50 movies. We are expanding it so we have have a better recommendation system and just better than what it was before. 
 
-Development Cycle. For GitHub pages, the tooling described below will create a development cycle  `make-code-save-preview`.  In the development cycle, it is a requirement to preview work locally, prior to doing a VSCode `commit` to git.
-
-Deployment Cycle.  In the deplopyment cycle, `sync-github-action-review`, it is a requirement to complete the development cycle prior to doing a VSCode `sync`.  The sync triggers github repository update.  The action starts the jekyll build to publish the website.  Any step can have errors and will require you to do a review.
-
-### WSL and/or Ubuntu installation requirements
-- The result of these step is Ubuntu tools to run preview server.  These procedures were created using [jekyllrb.com](https://jekyllrb.com/docs/installation/ubuntu/)
-- Run scripts in scripts directory of student repo: setup_ubuntu.sh and activate.sh. Expected name of the repository to run these scripts is 'student'.
+### AWS requirements
+- We have used AWS in order to power the backend of our website
+> We have successfully used AWS in the following
+- Encoding API for OMDB
+- Sign in Page
 
 ### MacOs installation requirements 
 - Ihe result of these step are MacOS tools to run preview server.  These procedures were created using [jekyllrb.com](https://jekyllrb.com/docs/installation/macos/). Run scripts in scripts directory of student repo: setup_macos.sh and activate_macos.sh. Expected name of the repository to run these scripts is 'student'.

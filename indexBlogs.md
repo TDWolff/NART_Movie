@@ -8,7 +8,7 @@ Looking for a movie? Search for it here!
 <head>
     <style>
         body {
-            background-image: url('images/sin city.png');
+            background-image: url('images/webbackground.png');
             background-size: cover;
             overscroll-behavior: none;
         }
