@@ -5,10 +5,14 @@ units: "1,2"
 course: compsci
 ---
 
-
-<style>
-    body {
-        background-image: url('images/sin city.png');
-        background-size: cover;
-    }
-</style>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('images/webbackground.png');
+            background-size: cover;
+            overscroll-behavior: none;
+        }
+    </style>
+</head>
+</html>

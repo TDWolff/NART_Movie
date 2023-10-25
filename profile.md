@@ -10,6 +10,13 @@ title: Profile
     <title>User Profile</title>
     <!-- Add your CSS styles here for better presentation -->
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('images/webbackground.png');
+            background-size: cover;
+            overscroll-behavior: none;
+        }
+    </style>
 </head>
 <body>
     <!-- Movie Selection Section -->
