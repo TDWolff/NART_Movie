@@ -10,7 +10,7 @@ title: Student Blog
 <head>
     <style>
         body {
-            background-image: url('images/sin city.png');
+            background-image: url('images/webbackground.png');
             background-size: cover;
             overscroll-behavior: none;
         }
