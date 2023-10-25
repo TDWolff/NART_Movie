@@ -5,7 +5,7 @@
 - Remy (Front end and DevOPS)
 - Torin(Back end with AWS)
 
-## What our project is about
+## What our project is about!
 Our project is a movie database, similar to IMDB, but in a more simpler form. We have incorporated by using javascript and html with css for the background while using python and AWS for our backend.
 - Our github pages is published at https://tdwolff.github.io/NART_Movie/
 
