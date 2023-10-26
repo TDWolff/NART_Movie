@@ -6,13 +6,23 @@ title: Movies
 # Movie Database Search
 Looking for a movie? Search for it here!
 <head>
+<<<<<<< HEAD
+    <style>
+        body {
+            background-image: url('images/webbackground.png');
+            background-size: cover;
+            overscroll-behavior: none;
+        }
+    </style>
+=======
 <style>
     body {
-        background-image: url('images/sin city.png');
+        background-image: url('images/webbackground.png');
         background-size: cover;
         overscroll-behavior: none;
     }
 </style>
+>>>>>>> a0fa005eb1e9fc486420e9adc11f34773310ec43
 </head>
 <body>
 <!-- Input box for movie search -->
