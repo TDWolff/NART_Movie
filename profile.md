@@ -43,7 +43,6 @@ title: Profile
     <script src="scripts/script.js"></script>
 
 
-<!--->
 <script>
     // Function to search for movies using the OMDB API
     function searchMovies() {
@@ -83,6 +82,5 @@ title: Profile
             });
     }
 </script>
-<-->
 </body>
 </html>
