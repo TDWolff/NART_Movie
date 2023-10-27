@@ -3,6 +3,8 @@ permalink: /profile
 title: Profile
 ---
 
+# Movie Recommendations
+Enter 5 of your favorite movies below:
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,44 +22,38 @@ title: Profile
 </head>
 <body>
     <!-- Movie Selection Section -->
-    <section id="movie-selection">
-        <h1>Select Your 5 Favorite Movies</h1>
-        <form id="movie-form">
-            <fieldset>
-                <legend>Movies:</legend>
-                <!-- JavaScript will populate this list -->
-            </fieldset>
-            <button type="submit">Save Selection</button>
-        </form>
-    </section>
+    <div>
+    <input type="text" id="movieInput" placeholder="Enter a movie title">
+    <button onclick="searchMovies()">Search</button>
+    </div>
+    <div>
+    <input type="text" id="movieInput" placeholder="Enter a movie title">
+    <button onclick="searchMovies()">Search</button>
+    </div>
+    <div>
+    <input type="text" id="movieInput" placeholder="Enter a movie title">
+    <button onclick="searchMovies()">Search</button>
+    </div>
+    <div>
+    <input type="text" id="movieInput" placeholder="Enter a movie title">
+    <button onclick="searchMovies()">Search</button>
+    </div>
+    <div>
+    <input type="text" id="movieInput" placeholder="Enter a movie title">
+    <button onclick="searchMovies()">Search</button>
+    </div>
 
-    <!-- Recommended Movies Section -->
-    <section id="recommended-movies">
-        <h2>Recommended Movies</h2>
-        <ul id="recommendations">
-            <!-- JavaScript will populate this list -->
-        </ul>
-    </section>
 
-    <!-- Include your JavaScript file for movie catalog handling -->
-    <script src="scripts/script.js"></script>
-
-
-<!--->
 <script>
     // Function to search for movies using the OMDB API
-    function searchMovies() {
-        // Get user input
+    function movieRec() {
+        var datelist = [];
+
+        // Get user input & search for movie
         const movieInput = document.getElementById("movieInput");
         const query = movieInput.value;
-
-        // Replace 'YOUR_OMDB_API_KEY' with your actual OMDB API key
         const apiKey = '85057df';
         const apiUrl = `https://www.omdbapi.com/?s=${encodeURIComponent(query)}&apikey=${apiKey}`;
-
-        // Clear previous results
-        const movieResults = document.getElementById("movieResults");
-        movieResults.innerHTML = '';
 
         // Fetch data from the OMDB API
         fetch(apiUrl)
@@ -66,11 +62,8 @@ title: Profile
                 // Process and display movie data
                 if (data.Response === "True" && data.Search) {
                     data.Search.forEach(movie => {
-                        const movieElement = document.createElement("div");
-                        movieElement.classList.add("movie-card"); // Add CSS class for styling
-                        // Create and append elements like movie title, poster, year, etc.
-                        movieElement.innerHTML = `<h3>${movie.Title}</h3><img src="${movie.Poster}" alt="${movie.Title}"><p>Year: ${movie.Year}</p>`;
-                        movieResults.appendChild(movieElement);
+                        // Add date to datelist
+                        datelist.push(movie.Year);
                     });
                 } else {
                     // Handle error or no results
@@ -78,11 +71,11 @@ title: Profile
                 }
             })
             .catch(error => {
+                // Handle errors with the search
                 console.error(error);
                 movieResults.innerHTML = 'An error occurred while fetching data.';
             });
     }
 </script>
-<-->
 </body>
 </html>
