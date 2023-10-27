@@ -3,6 +3,8 @@ permalink: /profile
 title: Profile
 ---
 
+# Movie Recommendations
+Enter 5 of your favorite movies below:
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,27 +22,26 @@ title: Profile
 </head>
 <body>
     <!-- Movie Selection Section -->
-    <section id="movie-selection">
-        <h1>Select Your 5 Favorite Movies</h1>
-        <form id="movie-form">
-            <fieldset>
-                <legend>Movies:</legend>
-                <!-- JavaScript will populate this list -->
-            </fieldset>
-            <button type="submit">Save Selection</button>
-        </form>
-    </section>
-
-    <!-- Recommended Movies Section -->
-    <section id="recommended-movies">
-        <h2>Recommended Movies</h2>
-        <ul id="recommendations">
-            <!-- JavaScript will populate this list -->
-        </ul>
-    </section>
-
-    <!-- Include your JavaScript file for movie catalog handling -->
-    <script src="scripts/script.js"></script>
+    <div>
+    <input type="text" id="movieInput" placeholder="Enter a movie title">
+    <button onclick="searchMovies()">Search</button>
+    </div>
+    <div>
+    <input type="text" id="movieInput" placeholder="Enter a movie title">
+    <button onclick="searchMovies()">Search</button>
+    </div>
+    <div>
+    <input type="text" id="movieInput" placeholder="Enter a movie title">
+    <button onclick="searchMovies()">Search</button>
+    </div>
+    <div>
+    <input type="text" id="movieInput" placeholder="Enter a movie title">
+    <button onclick="searchMovies()">Search</button>
+    </div>
+    <div>
+    <input type="text" id="movieInput" placeholder="Enter a movie title">
+    <button onclick="searchMovies()">Search</button>
+    </div>
 
 
 <script>
