@@ -24,25 +24,22 @@ Enter 5 of your favorite movies below:
     <!-- Movie Selection Section -->
     <div>
     <input type="text" id="movieInput1" placeholder="Enter a movie title">
-    <button onclick="searchMovies()">Search</button>
     </div>
     <div>
     <input type="text" id="movieInput2" placeholder="Enter a movie title">
-    <button onclick="searchMovies()">Search</button>
     </div>
     <div>
     <input type="text" id="movieInput3" placeholder="Enter a movie title">
-    <button onclick="searchMovies()">Search</button>
     </div>
     <div>
     <input type="text" id="movieInput4" placeholder="Enter a movie title">
-    <button onclick="searchMovies()">Search</button>
     </div>
     <div>
     <input type="text" id="movieInput5" placeholder="Enter a movie title">
+    </div>
+    <div>
     <button onclick="searchMovies()">Search</button>
     </div>
-
 
 <script>
     // Function to search for movies using the OMDB API
