@@ -23,23 +23,23 @@ Enter 5 of your favorite movies below:
 <body>
     <!-- Movie Selection Section -->
     <div>
-    <input type="text" id="movieInput" placeholder="Enter a movie title">
+    <input type="text" id="movieInput1" placeholder="Enter a movie title">
     <button onclick="searchMovies()">Search</button>
     </div>
     <div>
-    <input type="text" id="movieInput" placeholder="Enter a movie title">
+    <input type="text" id="movieInput2" placeholder="Enter a movie title">
     <button onclick="searchMovies()">Search</button>
     </div>
     <div>
-    <input type="text" id="movieInput" placeholder="Enter a movie title">
+    <input type="text" id="movieInput3" placeholder="Enter a movie title">
     <button onclick="searchMovies()">Search</button>
     </div>
     <div>
-    <input type="text" id="movieInput" placeholder="Enter a movie title">
+    <input type="text" id="movieInput4" placeholder="Enter a movie title">
     <button onclick="searchMovies()">Search</button>
     </div>
     <div>
-    <input type="text" id="movieInput" placeholder="Enter a movie title">
+    <input type="text" id="movieInput5" placeholder="Enter a movie title">
     <button onclick="searchMovies()">Search</button>
     </div>
 
@@ -47,10 +47,13 @@ Enter 5 of your favorite movies below:
 <script>
     // Function to search for movies using the OMDB API
     function movieRec() {
-        var datelist = [];
 
         // Get user input & search for movie
-        const movieInput = document.getElementById("movieInput");
+        const movieInput1 = document.getElementById("movieInput1");
+        const movieInput2 = document.getElementById("movieInput2");
+        const movieInput3 = document.getElementById("movieInput3");
+        const movieInput4 = document.getElementById("movieInput4");
+        const movieInput5 = document.getElementById("movieInput5");
         const query = movieInput.value;
         const apiKey = '85057df';
         const apiUrl = `https://www.omdbapi.com/?s=${encodeURIComponent(query)}&apikey=${apiKey}`;
