@@ -75,6 +75,10 @@ Enter 5 of your favorite movies below:
                     movieResults.innerHTML = 'An error occurred while fetching data.';
                 });   
         }
+    datelist.min()
+    datelist.max()
+    // Find 15 movies with dates within this range.
+    
     }
 </script>
 </body>
