@@ -78,7 +78,10 @@ Enter 5 of your favorite movies below:
     datelist.min()
     datelist.max()
     // Find 15 movies with dates within this range.
-    
+    movie_titles = []
+    movie_posters = []
+
+    //Create return HTML loadout
     }
 </script>
 </body>
