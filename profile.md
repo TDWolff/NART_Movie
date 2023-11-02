@@ -77,17 +77,9 @@ title: Movie Recommendation System
                 .then((data) => {
                   data.results.slice(0, 5).forEach((movie) => {
                     const li = document.createElement("div");
-                    li.textContent = movie.title;
+                    li.classList.add("movie-card");
+                    movieElement.innerHTML = `<h3>${movie.Title}</h3><img src="${movie.Poster}" alt="${movie.Title}"><p>Year: ${movie.Year}</p>`;
                     recommendedMovies.appendChild(li);
-
-/**
-                        movieElement.classList.add("movie-card"); // Add CSS class for styling
-                        // Create and append elements like movie title, poster, year, etc.
-                        movieElement.innerHTML = `<h3>${movie.Title}</h3><img src="${movie.Poster}" alt="${movie.Title}"><p>Year: ${movie.Year}</p>`;
-                        movieResults.appendChild(movieElement);
-                        **/
-
-
                   });
                 });
             }
