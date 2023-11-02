@@ -3,15 +3,9 @@ permalink: /profile
 title: Profile
 ---
 
-# Movie Recommendations
-Enter 5 of your favorite movies below:
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
-    <!-- Add your CSS styles here for better presentation -->
-    <link rel="stylesheet" href="styles.css">
+  <title>Movie Recommendation System</title>
     <style>
         body {
             background-image: url('images/webbackground.png');
@@ -19,70 +13,70 @@ Enter 5 of your favorite movies below:
             overscroll-behavior: none;
         }
     </style>
+<style>
+    body {
+        background-image: url('images/webbackground.png');
+        background-size: cover;
+        overscroll-behavior: none;
+    }
+</style>
 </head>
 <body>
-    <!-- Movie Selection Section -->
-    <div>
-    <input type="text" id="movieInput1" placeholder="Enter a movie title">
-    </div>
-    <div>
-    <input type="text" id="movieInput2" placeholder="Enter a movie title">
-    </div>
-    <div>
-    <input type="text" id="movieInput3" placeholder="Enter a movie title">
-    </div>
-    <div>
-    <input type="text" id="movieInput4" placeholder="Enter a movie title">
-    </div>
-    <div>
-    <input type="text" id="movieInput5" placeholder="Enter a movie title">
-    </div>
-    <div>
-    <button onclick="searchMovies()">Search</button>
-    </div>
+  <h1>Movie Recommendation System</h1>
+  <p>Enter 5 movie titles:</p>
 
-<script>
-    // Function to search for movies using the OMDB API
-    function movieRec() {
+  <input type="text" id="movie1" placeholder="Movie 1">
+  <input type="text" id="movie2" placeholder="Movie 2">
+  <input type="text" id="movie3" placeholder="Movie 3">
+  <input type="text" id="movie4" placeholder="Movie 4">
+  <input type="text" id="movie5" placeholder="Movie 5">
+  <button onclick="getRecommendations()">Get Recommendations</button>
 
-        //API URL and key constants
-        const apiKey = '85057df';
+  <h2>Recommended Movies:</h2>
+  <ul id="recommendedMovies"></ul>
 
-        // Get user input & search for movie
-        var dateList = [];
-        for (let i = 0; i < 5; i++){
-            var movieInput = document.getElementById('movieInput'+i);
-            var query = movieInput.value;
-            var apiUrl = `https://www.omdbapi.com/?s=${encodeURIComponent(query)}&apikey=${apiKey}`;
-            // Fetch data from the OMDB API
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    // Process and display movie data
-                    if (data.Response === "True" && data.Search) {
-                        data.Search.forEach(movie => {
-                            // Add date to datelist
-                            datelist.push(movie.Year);
-                        });
-                    } else {
-                        // Handle error or no results
-                        movieResults.innerHTML = 'No movies found or an error occurred.';
-                    }
-                })
-                .catch(error => {
-                    // Handle errors with the search
-                    console.error(error);
-                    movieResults.innerHTML = 'An error occurred while fetching data.';
-                });   
-        }
-    datelist.min()
-    datelist.max()
-    // Find 15 movies with dates within this range.
-    movie_titles = []
-    movie_posters = []
+  <script>
+    function getRecommendations() {
+      const apiKey = '7d48fb5014e3bca66e0af638d07daeb5';
+      const movies = [
+        document.getElementById('movie1').value,
+        document.getElementById('movie2').value,
+        document.getElementById('movie3').value,
+        document.getElementById('movie4').value,
+        document.getElementById('movie5').value,
+      ];
 
-    //Create return HTML loadout
+      const recommendedMovies = document.getElementById('recommendedMovies');
+      recommendedMovies.innerHTML = '';
+
+      // Search for each movie and get their IDs
+      const movieIDs = movies.map((movie) => {
+        return fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(movie)}`)
+          .then((response) => response.json())
+          .then((data) => data.results[0]?.id);
+      });
+
+      // Get recommendations for each movie
+      Promise.all(movieIDs)
+        .then((ids) => {
+          ids.forEach((id) => {
+            if (id) {
+              return fetch(`https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${apiKey}`)
+                .then((response) => response.json())
+                .then((data) => {
+                  data.results.slice(0, 5).forEach((movie) => {
+                    const li = document.createElement('li');
+                    li.textContent = movie.title;
+                    recommendedMovies.appendChild(li);
+                  });
+                });
+            }
+          });
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
     }
-</script>
+  </script>
 </body>
 </html>
