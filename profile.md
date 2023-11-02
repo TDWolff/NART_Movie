@@ -24,60 +24,64 @@ Enter 5 of your favorite movies below:
     <!-- Movie Selection Section -->
     <div>
     <input type="text" id="movieInput1" placeholder="Enter a movie title">
-    <button onclick="searchMovies()">Search</button>
     </div>
     <div>
     <input type="text" id="movieInput2" placeholder="Enter a movie title">
-    <button onclick="searchMovies()">Search</button>
     </div>
     <div>
     <input type="text" id="movieInput3" placeholder="Enter a movie title">
-    <button onclick="searchMovies()">Search</button>
     </div>
     <div>
     <input type="text" id="movieInput4" placeholder="Enter a movie title">
-    <button onclick="searchMovies()">Search</button>
     </div>
     <div>
     <input type="text" id="movieInput5" placeholder="Enter a movie title">
+    </div>
+    <div>
     <button onclick="searchMovies()">Search</button>
     </div>
-
 
 <script>
     // Function to search for movies using the OMDB API
     function movieRec() {
 
-        // Get user input & search for movie
-        const movieInput1 = document.getElementById("movieInput1");
-        const movieInput2 = document.getElementById("movieInput2");
-        const movieInput3 = document.getElementById("movieInput3");
-        const movieInput4 = document.getElementById("movieInput4");
-        const movieInput5 = document.getElementById("movieInput5");
-        const query = movieInput.value;
+        //API URL and key constants
         const apiKey = '85057df';
-        const apiUrl = `https://www.omdbapi.com/?s=${encodeURIComponent(query)}&apikey=${apiKey}`;
 
-        // Fetch data from the OMDB API
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                // Process and display movie data
-                if (data.Response === "True" && data.Search) {
-                    data.Search.forEach(movie => {
-                        // Add date to datelist
-                        datelist.push(movie.Year);
-                    });
-                } else {
-                    // Handle error or no results
-                    movieResults.innerHTML = 'No movies found or an error occurred.';
-                }
-            })
-            .catch(error => {
-                // Handle errors with the search
-                console.error(error);
-                movieResults.innerHTML = 'An error occurred while fetching data.';
-            });
+        // Get user input & search for movie
+        var dateList = [];
+        for (let i = 0; i < 5; i++){
+            var movieInput = document.getElementById('movieInput'+i);
+            var query = movieInput.value;
+            var apiUrl = `https://www.omdbapi.com/?s=${encodeURIComponent(query)}&apikey=${apiKey}`;
+            // Fetch data from the OMDB API
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Process and display movie data
+                    if (data.Response === "True" && data.Search) {
+                        data.Search.forEach(movie => {
+                            // Add date to datelist
+                            datelist.push(movie.Year);
+                        });
+                    } else {
+                        // Handle error or no results
+                        movieResults.innerHTML = 'No movies found or an error occurred.';
+                    }
+                })
+                .catch(error => {
+                    // Handle errors with the search
+                    console.error(error);
+                    movieResults.innerHTML = 'An error occurred while fetching data.';
+                });   
+        }
+    datelist.min()
+    datelist.max()
+    // Find 15 movies with dates within this range.
+    movie_titles = []
+    movie_posters = []
+
+    //Create return HTML loadout
     }
 </script>
 </body>
