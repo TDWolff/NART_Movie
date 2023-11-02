@@ -1,5 +1,5 @@
 ---
-permalink: /mrc
+permalink: /recommendations
 title: Movie Recommendation System
 ---
 
