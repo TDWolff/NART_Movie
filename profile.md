@@ -1,6 +1,6 @@
 ---
-permalink: /profile
-title: Profile
+permalink: /mrc
+title: Movie Recommendation System
 ---
 
 <html>
