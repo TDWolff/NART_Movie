@@ -1,6 +1,6 @@
 ---
-permalink: /profile
-title: Profile
+permalink: /mrc
+title: Movie Recommendation System
 ---
 
 <html>
@@ -24,13 +24,24 @@ title: Profile
 <body>
   <h1>Movie Recommendation System</h1>
   <p>Enter 5 movie titles:</p>
-
+<div>
   <input type="text" id="movie1" placeholder="Movie 1">
+</div>
+<div>
   <input type="text" id="movie2" placeholder="Movie 2">
+</div>
+<div>
   <input type="text" id="movie3" placeholder="Movie 3">
+</div>
+<div>
   <input type="text" id="movie4" placeholder="Movie 4">
+</div>
+<div>
   <input type="text" id="movie5" placeholder="Movie 5">
+</div>
+<div>
   <button onclick="getRecommendations()">Get Recommendations</button>
+</div>
 
   <h2>Recommended Movies:</h2>
   <ul id="recommendedMovies"></ul>
