@@ -76,8 +76,11 @@ title: Movie Recommendation System
                 .then((response) => response.json())
                 .then((data) => {
                   data.results.slice(0, 5).forEach((movie) => {
+                    //const title_search = `https://www.omdbapi.com/?s=${encodeURIComponent(movie.title)}&apikey=85057df`;
+                    //fetch(apiUrl)
+
                     const li = document.createElement("div");
-                    li.innerHTML = `<h3>${movie.title}</h3><img src="${movie.Poster}" alt="${movie.title}">`;
+                    li.innerHTML = `<h3>${movie.title}</h3>`;//<img src="${movie.Poster}" alt="${movie.title}">;
                     recommendedMovies.appendChild(li);
 
 /**
