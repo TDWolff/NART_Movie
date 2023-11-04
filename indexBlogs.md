@@ -5,22 +5,20 @@ title: Movies
 
 # Movie Database Search
 Looking for a movie? Search for it here!
+
 <head>
     <style>
         body {
+            /* Set the background image for the body */
             background-image: url('images/webbackground.png');
+            /* Make the background cover the entire page */
             background-size: cover;
+            /* Disable overscroll behavior */
             overscroll-behavior: none;
         }
     </style>
-<style>
-    body {
-        background-image: url('images/webbackground.png');
-        background-size: cover;
-        overscroll-behavior: none;
-    }
-</style>
 </head>
+
 <body>
 <!-- Input box for movie search -->
 <div>
