@@ -83,13 +83,6 @@ title: Movie Recommendation System
                     li.innerHTML = `<h3>${movie.title}</h3>`;//<img src="${movie.Poster}" alt="${movie.title}">;
                     recommendedMovies.appendChild(li);
 
-/**
-                        movieElement.classList.add("movie-card"); // Add CSS class for styling
-                        // Create and append elements like movie title, poster, year, etc.
-                        movieElement.innerHTML = `<h3>${movie.Title}</h3><img src="${movie.Poster}" alt="${movie.Title}"><p>Year: ${movie.Year}</p>`;
-                        movieResults.appendChild(movieElement);
-                        **/
-
 
                   });
                 });
